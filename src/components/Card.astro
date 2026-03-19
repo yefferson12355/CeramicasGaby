@@ -1,0 +1,30 @@
+---
+interface Props {
+	title: string;
+	image: string;
+	description?: string;
+}
+
+const { title, image, description } = Astro.props;
+---
+
+<div class="group bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col h-full">
+	<div class="relative h-64 bg-gray-200 overflow-hidden">
+		<img 
+			src={image} 
+			alt={title} 
+			class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+			loading="lazy"
+		/>
+		<div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+	</div>
+	<div class="p-6 flex flex-col flex-grow">
+		<h3 class="text-lg font-semibold text-gray-800 mb-2 group-hover:text-amber-600 transition-colors duration-200">
+			{title}
+		</h3>
+		{description && <p class="text-gray-600 text-sm mb-4 flex-grow">{description}</p>}
+		<button class="w-full bg-amber-600 hover:bg-amber-700 text-white font-medium py-2 px-4 rounded transition-all duration-200 transform hover:scale-105 active:scale-95">
+			Ver Detalles
+		</button>
+	</div>
+</div>

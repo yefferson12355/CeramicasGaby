@@ -1,0 +1,93 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Card from '../components/Card.astro';
+
+const products = [
+	{
+		title: 'PORCELANATO ALTAMIR GOLD 60x60',
+		image: 'https://images.pexels.com/photos/1595385/pexels-photo-1595385.jpeg?auto=compress&cs=tinysrgb&w=600',
+		description: 'Porcelanato rectificado de alta resistencia'
+	},
+	{
+		title: 'PORCELANATO MÁRMOL CARRARA 60x60',
+		image: 'https://images.pexels.com/photos/6969831/pexels-photo-6969831.jpeg?auto=compress&cs=tinysrgb&w=600',
+		description: 'Elegante acabado símil mármol'
+	},
+	{
+		title: 'PORCELANATO GRIS CEMENTO 60x60',
+		image: 'https://images.pexels.com/photos/1838554/pexels-photo-1838554.jpeg?auto=compress&cs=tinysrgb&w=600',
+		description: 'Estilo moderno y minimalista'
+	},
+	{
+		title: 'PORCELANATO MADERA ROBLE 60x60',
+		image: 'https://images.pexels.com/photos/1090638/pexels-photo-1090638.jpeg?auto=compress&cs=tinysrgb&w=600',
+		description: 'Textura símil madera natural'
+	},
+	{
+		title: 'PORCELANATO TRAVERTINO 60x60',
+		image: 'https://images.pexels.com/photos/2098427/pexels-photo-2098427.jpeg?auto=compress&cs=tinysrgb&w=600',
+		description: 'Acabado piedra natural premium'
+	},
+	{
+		title: 'PORCELANATO NEGRO ABSOLUTE 60x60',
+		image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=600',
+		description: 'Sofisticación y elegancia'
+	}
+];
+---
+
+<Layout>
+	<Hero />
+
+	<!-- Sección de Catálogo -->
+	<section id="catalogo" class="container mx-auto px-4 py-16">
+		<div class="text-center mb-12">
+			<h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+				Porcelanatos 60x60
+			</h2>
+			<p class="text-gray-600 max-w-2xl mx-auto">
+				Descubre nuestra colección de porcelanatos de alta calidad, perfectos para cualquier ambiente
+			</p>
+		</div>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+			{products.map((product) => (
+				<Card
+					title={product.title}
+					image={product.image}
+					description={product.description}
+				/>
+			))}
+		</div>
+	</section>
+
+	<!-- Sección de Características -->
+	<section class="bg-gray-100 py-16 mt-12">
+		<div class="container mx-auto px-4">
+			<h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">
+				¿Por qué elegirnos?
+			</h2>
+			
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+				<div class="bg-white p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow duration-300">
+					<div class="text-4xl mb-4">✨</div>
+					<h3 class="text-xl font-semibold text-gray-800 mb-2">Alta Calidad</h3>
+					<p class="text-gray-600">Productos premium seleccionados para garantizar durabilidad y belleza</p>
+				</div>
+				
+				<div class="bg-white p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow duration-300">
+					<div class="text-4xl mb-4">🚚</div>
+					<h3 class="text-xl font-semibold text-gray-800 mb-2">Entrega Rápida</h3>
+					<p class="text-gray-600">Entregamos a todo el país con la mejor logística del mercado</p>
+				</div>
+				
+				<div class="bg-white p-8 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow duration-300">
+					<div class="text-4xl mb-4">💬</div>
+					<h3 class="text-xl font-semibold text-gray-800 mb-2">Asesoría Experta</h3>
+					<p class="text-gray-600">Nuestro equipo está disponible para ayudarte a elegir el producto perfecto</p>
+				</div>
+			</div>
+		</div>
+	</section>
+</Layout>
