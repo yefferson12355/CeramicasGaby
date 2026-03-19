@@ -1,0 +1,46 @@
+---
+// Número de WhatsApp (sin espacios ni símbolos, solo números)
+// Formato: +51987654321 o 51987654321
+const WHATSAPP_NUMBER = "51991322630"; // CAMBIAR AQUÍ CON TU NÚMERO
+const WHATSAPP_MESSAGE = encodeURIComponent(
+	"Hola! Me gustaría conocer más sobre tus cerámicas y porcelanatos. ¿Puedes ayudarme?"
+);
+const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
+---
+
+<div class="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-40 group">
+	<a
+		href={WHATSAPP_URL}
+		target="_blank"
+		rel="noopener noreferrer"
+		class="flex items-center justify-center bg-green-500 hover:bg-green-600 text-white rounded-full w-14 h-14 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-110 active:scale-95"
+		aria-label="Contactar por WhatsApp"
+		title="¿Preguntas? ¡Escríbenos!"
+	>
+		<!-- Logo WhatsApp oficial -->
+		<svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+			<path
+				d="M12 0C5.373 0 0 5.373 0 12c0 2.059.54 4.076 1.563 5.855L0 24l6.305-1.541C8.812 23.523 10.386 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.468 0-2.881-.356-4.113-1.038l-.295-.147-3.056.75.755-3.045-.146-.294C1.427 15.098 1 13.573 1 12c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10z"
+			/>
+			<path
+				d="M9.5 7.5c-.276 0-.5.224-.5.5 0 .276.224.5.5.5h.01c.276 0 .5-.224.5-.5 0-.276-.224-.5-.5-.5h-.01zm2 0c-.276 0-.5.224-.5.5 0 .276.224.5.5.5h.01c.276 0 .5-.224.5-.5 0-.276-.224-.5-.5-.5h-.01zm2.5.5c0 .552.448 1 1 1s1-.448 1-1-.448-1-1-1-1 .448-1 1zm-7 2h10v8h-10v-8zm1.5 1.5c-.828 0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5 1.5-.672 1.5-1.5-.672-1.5-1.5-1.5zm3 0c-.828 0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5 1.5-.672 1.5-1.5-.672-1.5-1.5-1.5zm3 0c-.828 0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5 1.5-.672 1.5-1.5-.672-1.5-1.5-1.5z"
+				fill="white"
+			/>
+		</svg>
+	</a>
+
+	<!-- Etiqueta flotante -->
+	<div class="absolute bottom-0 right-16 whitespace-nowrap bg-green-500 text-white px-3 py-2 rounded-lg font-semibold text-sm shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+		Chatea conmigo
+		<div class="absolute right-0 top-1/2 transform translate-x-2 -translate-y-1/2 w-0 h-0 border-l-6 border-l-green-500 border-t-6 border-t-transparent border-b-6 border-b-transparent"></div>
+	</div>
+</div>
+
+<style>
+	@media (max-width: 768px) {
+		:global(.group) {
+			bottom: 1.5rem !important;
+			right: 1.5rem !important;
+		}
+	}
+</style>
