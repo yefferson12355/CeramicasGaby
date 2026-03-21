@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Welcome from '../components/Welcome.astro';
+
+const salaProducts = [
+	{
+		title: 'CERÁMICA SALA ELEGANTE',
+		image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=600&fit=crop',
+		description: 'Porcelanatos para sala con diseños modernos y elegantes',
+		category: 'Sala',
+		price: 'Consultar'
+	}
+];
+---
+
+<Layout>
+	<Welcome
+		title="Colección de Salas"
+		description="Cerámicas premium para espacios de estar"
+		products={salaProducts}
+		sectionId="sala"
+	/>
+</Layout>

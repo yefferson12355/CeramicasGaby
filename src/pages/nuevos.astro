@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Welcome from '../components/Welcome.astro';
+
+const nuevosProducts = [
+	{
+		title: 'ÚLTIMA COLECCIÓN 2026',
+		image: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=600&h=600&fit=crop',
+		description: 'Descubre los nuevos diseños y tendencias en cerámicas',
+		category: 'Nuevos',
+		price: 'Consultar'
+	}
+];
+---
+
+<Layout>
+	<Welcome
+		title="Productos Nuevos"
+		description="Las últimas novedades en nuestra colección de cerámicas"
+		products={nuevosProducts}
+		sectionId="nuevos"
+	/>
+</Layout>

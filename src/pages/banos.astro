@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Welcome from '../components/Welcome.astro';
+
+const banoProducts = [
+	{
+		title: 'FRENCIA NEGRO BAÑO',
+		image: '/Banos/Frencia_negrobano1.png',
+		description: 'Cerámica de baño premium Frencia en color negro elegante',
+		category: 'Premium',
+		price: 'Consultar'
+	}
+];
+---
+
+<Layout>
+	<Welcome
+		title="Colección de Baños"
+		description="Explorar nuestras cerámicas y soluciones especializadas para baños"
+		products={banoProducts}
+		sectionId="banos"
+	/>
+</Layout>

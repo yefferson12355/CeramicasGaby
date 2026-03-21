@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Welcome from '../components/Welcome.astro';
+
+const cocinaProducts = [
+	{
+		title: 'CERÁMICA COCINA PREMIUM',
+		image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=600&fit=crop',
+		description: 'Cerámica especial para cocinas con acabado resistente y fácil limpieza',
+		category: 'Cocina',
+		price: 'Consultar'
+	}
+];
+---
+
+<Layout>
+	<Welcome
+		title="Colección de Cocinas"
+		description="Cerámicas y porcelanatos especializados para cocinas"
+		products={cocinaProducts}
+		sectionId="cocina"
+	/>
+</Layout>
