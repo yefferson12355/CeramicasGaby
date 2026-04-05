@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Welcome from '../components/Welcome.astro';
+import CategoryShowcase from '../components/CategoryShowcase.astro';
+
+const adhesivosProducts = [
+	{
+		title: 'Adhesivo Flexible Premium',
+		image: 'https://images.unsplash.com/photo-1563207153-f403bf289096?w=600&h=600&fit=crop',
+		description: 'Adhesivo flexible de alta calidad. Ideal para superficies con movimiento',
+		category: 'Adhesivos',
+		price: 'Consultar'
+	},
+	{
+		title: 'Adhesivo Reforzado para Grandes Formatos',
+		image: 'https://images.unsplash.com/photo-1581092335601-8022df4466f9?w=600&h=600&fit=crop',
+		description: 'Adhesivo especial para porcelanatos y grandes formatos. Alta adhesión garantizada',
+		category: 'Adhesivos',
+		price: 'Consultar'
+	},
+	{
+		title: 'Mortero Fino (Thin-Set)',
+		image: 'https://images.unsplash.com/photo-1581092917692-8f408f96c1bd?w=600&h=600&fit=crop',
+		description: 'Mortero fino de última generación. Perfecto para acabados profesionales',
+		category: 'Adhesivos',
+		price: 'Consultar'
+	},
+	{
+		title: 'Adhesivo Multiuso Construcción',
+		image: 'https://images.unsplash.com/photo-1581092539040-9be86b13db7e?w=600&h=600&fit=crop',
+		description: 'Adhesivo versátil para múltiples aplicaciones. Secado rápido y confiable',
+		category: 'Adhesivos',
+		price: 'Consultar'
+	}
+];
+
+const categoryAccessories = [
+	{ name: 'BAÑO', href: '/banos', color: 'from-blue-600 to-blue-700' },
+	{ name: 'COCINA', href: '/cocina', color: 'from-orange-600 to-orange-700' },
+	{ name: 'SALA', href: '/sala', color: 'from-purple-600 to-purple-700' },
+	{ name: 'TERRAZA', href: '/terraza', color: 'from-green-600 to-green-700' },
+];
+---
+
+<Layout>
+	<CategoryShowcase
+		title="Adhesivos y Morteros Profesionales"
+		description="Productos de alta calidad para la instalación correcta de tus cerámicas. Garantía de durabilidad y resistencia."
+		heroImage="https://images.unsplash.com/photo-1563207153-f403bf289096?w=1200&h=600&fit=crop"
+		category="adhesivos"
+		accessories={categoryAccessories}
+	/>
+
+	<div class="container mx-auto px-4 py-12">
+		<h2 class="text-3xl font-bold text-gray-900 mb-8">Adhesivos y Morteros Disponibles</h2>
+		<Welcome
+			title="Productos Disponibles"
+			description="Explorar nuestra selección de adhesivos profesionales"
+			products={adhesivosProducts}
+			sectionId="adhesivos"
+		/>
+	</div>
+</Layout>

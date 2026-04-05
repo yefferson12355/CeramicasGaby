@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Welcome from '../components/Welcome.astro';
+import CategoryShowcase from '../components/CategoryShowcase.astro';
+
+const herramientasProducts = [
+	{
+		title: 'Lápices de Cerámica para Corte',
+		image: 'https://images.unsplash.com/photo-1577720643272-265f434881d0?w=600&h=600&fit=crop',
+		description: 'Lápices especiales para marcar líneas de corte en cerámicas con precisión',
+		category: 'Herramientas',
+		price: 'Consultar'
+	},
+	{
+		title: 'Espatulas y Llanas',
+		image: 'https://images.unsplash.com/photo-1577844686519-e21cc028cb29?w=600&h=600&fit=crop',
+		description: 'Set de espatulas y llanas profesionales para aplicación de adhesivos',
+		category: 'Herramientas',
+		price: 'Consultar'
+	},
+	{
+		title: 'Espaciadores de Precisión',
+		image: 'https://images.unsplash.com/photo-1578562494508-27e50c4a0bff?w=600&h=600&fit=crop',
+		description: 'Espaciadores de 1-10mm para juntas perfectas y uniformes',
+		category: 'Herramientas',
+		price: 'Consultar'
+	},
+	{
+		title: 'Cortadores de Cerámica Profesional',
+		image: 'https://images.unsplash.com/photo-1577742212445-87e5b814b326?w=600&h=600&fit=crop',
+		description: 'Cortadora manual de precisión para cerámicas. Cortes limpios garantizados',
+		category: 'Herramientas',
+		price: 'Consultar'
+	}
+];
+
+const categoryAccessories = [
+	{ name: 'BAÑO', href: '/banos', color: 'from-blue-600 to-blue-700' },
+	{ name: 'COCINA', href: '/cocina', color: 'from-orange-600 to-orange-700' },
+	{ name: 'SALA', href: '/sala', color: 'from-purple-600 to-purple-700' },
+	{ name: 'TERRAZA', href: '/terraza', color: 'from-green-600 to-green-700' },
+];
+---
+
+<Layout>
+	<CategoryShowcase
+		title="Herramientas Profesionales"
+		description="Todo lo que necesitas para una instalación profesional y precisa. Herramientas de calidad para trabajos perfectos."
+		heroImage="https://images.unsplash.com/photo-1577720643272-265f434881d0?w=1200&h=600&fit=crop"
+		category="herramientas"
+		accessories={categoryAccessories}
+	/>
+
+	<div class="container mx-auto px-4 py-12">
+		<h2 class="text-3xl font-bold text-gray-900 mb-8">Herramientas Disponibles</h2>
+		<Welcome
+			title="Productos Disponibles"
+			description="Explora nuestras herramientas profesionales"
+			products={herramientasProducts}
+			sectionId="herramientas"
+		/>
+	</div>
+</Layout>

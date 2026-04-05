@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Welcome from '../components/Welcome.astro';
+import CategoryShowcase from '../components/CategoryShowcase.astro';
 
 const cocinaProducts = [
 	{
@@ -14,10 +15,20 @@ const cocinaProducts = [
 ---
 
 <Layout>
-	<Welcome
-		title="Colección de Cocinas"
-		description="Cerámicas y porcelanatos especializados para cocinas"
-		products={cocinaProducts}
-		sectionId="cocina"
+	<CategoryShowcase
+		title="Colección Premium de Cocinas"
+		description="Transforma tu cocina con cerámicas de alta resistencia. Descubre todos los materiales y herramientas necesarias para una instalación profesional y duradera."
+		heroImage="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&h=600&fit=crop"
+		category="cocinas"
 	/>
+
+	<div class="container mx-auto px-4 py-12">
+		<h2 class="text-3xl font-bold text-gray-900 mb-8">Productos Destacados para Cocinas</h2>
+		<Welcome
+			title="Productos Destacados"
+			description="Explora nuestra selección de cerámicas especializadas para cocinas"
+			products={cocinaProducts}
+			sectionId="cocina"
+		/>
+	</div>
 </Layout>

@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Welcome from '../components/Welcome.astro';
+import CategoryShowcase from '../components/CategoryShowcase.astro';
 
 const banoProducts = [
 	{
@@ -14,10 +15,20 @@ const banoProducts = [
 ---
 
 <Layout>
-	<Welcome
-		title="Colección de Baños"
-		description="Explorar nuestras cerámicas y soluciones especializadas para baños"
-		products={banoProducts}
-		sectionId="banos"
+	<CategoryShowcase
+		title="Colección Premium de Baños"
+		description="Transforma tu baño con cerámicas y accesorios de calidad superior. Descubre todos los componentes necesarios para una instalación completa y profesional."
+		heroImage="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=1200&h=600&fit=crop"
+		category="baños"
 	/>
+
+	<div class="container mx-auto px-4 py-12">
+		<h2 class="text-3xl font-bold text-gray-900 mb-8">Productos Destacados para Baños</h2>
+		<Welcome
+			title="Productos Destacados"
+			description="Explora nuestra selección de cerámicas especializadas para baños"
+			products={banoProducts}
+			sectionId="banos"
+		/>
+	</div>
 </Layout>

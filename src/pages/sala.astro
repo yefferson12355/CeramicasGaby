@@ -1,23 +1,61 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Welcome from '../components/Welcome.astro';
+import CategoryShowcase from '../components/CategoryShowcase.astro';
 
 const salaProducts = [
-	{
-		title: 'CERÁMICA SALA ELEGANTE',
-		image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=600&fit=crop',
-		description: 'Porcelanatos para sala con diseños modernos y elegantes',
-		category: 'Sala',
-		price: 'Consultar'
-	}
+	{ id: 1, name: 'CANELA NATURAL', size: '20 x 61', material: 'Cerámica' },
+	{ id: 2, name: 'CANELA GRIS', size: '20 x 61', material: 'Cerámica' },
+	{ id: 3, name: 'NAPOLI BLANCO', size: '45 x 45', material: 'Cerámica' },
+	{ id: 4, name: 'PARALELO GRIS', size: '20 x 61', material: 'Cerámica' },
+	{ id: 5, name: 'PARALELO NATURAL', size: '20 x 61', material: 'Cerámica' },
+	{ id: 6, name: 'PARALELO CASTAÑO', size: '20 x 61', material: 'Cerámica' },
+	{ id: 7, name: 'KHALIFA GOLD', size: '30 x 60', material: 'Porcelanato' },
+	{ id: 8, name: 'YORK HUESO', size: '45 x 45', material: 'Cerámica' },
+	{ id: 9, name: 'YORK GRIS', size: '45 x 45', material: 'Cerámica' },
+	{ id: 10, name: 'CALACATA TORINO SATIN', size: '30 x 60', material: 'Porcelanato' },
+	{ id: 11, name: 'CALACATA TORINO BRILLO', size: '30 x 60', material: 'Porcelanato' },
+	{ id: 12, name: 'FROZEN GRIS', size: '30 x 60', material: 'Porcelanato' },
 ];
 ---
 
 <Layout>
-	<Welcome
-		title="Colección de Salas"
-		description="Cerámicas premium para espacios de estar"
-		products={salaProducts}
-		sectionId="sala"
+	<CategoryShowcase
+		title="Colección Premium de Salas"
+		description="Crea espacios elegantes y modernos con nuestras cerámicas para salas. Encuentra todos los accesorios y materiales necesarios para una instalación impecable."
+		heroImage="/Portadas/Sala.jpeg"
+		category="salas"
 	/>
+
+	<div class="container mx-auto px-4 py-16">
+		<h2 class="text-3xl font-bold text-gray-900 mb-12">Productos Disponibles para Salas</h2>
+		
+		<!-- Products Grid -->
+		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+			{salaProducts.map((product) => (
+				<div class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300">
+					<div class="aspect-square bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
+						<div class="text-center">
+							<div class="text-gray-600 font-semibold text-sm mb-2">{product.material}</div>
+							<div class="text-gray-400 text-xs">{product.size}</div>
+						</div>
+					</div>
+					<div class="p-4">
+						<h3 class="font-semibold text-gray-900 text-sm mb-3">{product.name}</h3>
+						<div class="flex items-center justify-between mb-3">
+							<span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">{product.size}</span>
+							<span class="text-xs text-blue-600 font-semibold">{product.material}</span>
+						</div>
+						<button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 text-sm">
+							Consultar Precio
+						</button>
+					</div>
+				</div>
+			))}
+		</div>
+
+		<!-- Pagination info -->
+		<div class="mt-12 text-center text-gray-600">
+			<p class="text-sm">Mostrando 1–{salaProducts.length} de {salaProducts.length} resultados</p>
+		</div>
+	</div>
 </Layout>

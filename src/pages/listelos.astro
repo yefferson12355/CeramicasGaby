@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Welcome from '../components/Welcome.astro';
+import CategoryShowcase from '../components/CategoryShowcase.astro';
+
+const listelosProducts = [
+	{
+		title: 'Listelo 5cm Blanco Brillo',
+		image: 'https://images.unsplash.com/photo-1572909061407-7fd0a3b8ea17?w=600&h=600&fit=crop',
+		description: 'Listelo decorativo de 5cm en blanco brillo. Perfecto para bordes y marcos',
+		category: 'Listelos',
+		price: 'Consultar'
+	},
+	{
+		title: 'Listelo Decorativo 3cm Líneas Doradas',
+		image: 'https://images.unsplash.com/photo-1578608541035-0461bc944298?w=600&h=600&fit=crop',
+		description: 'Listelo elegante de 3cm con líneas doradas. Ideal para dar lujo a espacios',
+		category: 'Listelos',
+		price: 'Consultar'
+	},
+	{
+		title: 'Listelo Esquinero Gris',
+		image: 'https://images.unsplash.com/photo-1560945888-15ae2bf4c10f?w=600&h=600&fit=crop',
+		description: 'Listelo esquinero especial para ángulos. Color gris neutral versátil',
+		category: 'Listelos',
+		price: 'Consultar'
+	},
+	{
+		title: 'Moldura 2cm Varios Acabados',
+		image: 'https://images.unsplash.com/photo-1531315630201-bb040cf2a92d?w=600&h=600&fit=crop',
+		description: 'Moldura de 2cm disponible en múltiples acabados. Complemento perfecto para instalaciones',
+		category: 'Listelos',
+		price: 'Consultar'
+	}
+];
+
+const categoryAccessories = [
+	{ name: 'BAÑO', href: '/banos', color: 'from-blue-600 to-blue-700' },
+	{ name: 'COCINA', href: '/cocina', color: 'from-orange-600 to-orange-700' },
+	{ name: 'SALA', href: '/sala', color: 'from-purple-600 to-purple-700' },
+	{ name: 'TERRAZA', href: '/terraza', color: 'from-green-600 to-green-700' },
+];
+---
+
+<Layout>
+	<CategoryShowcase
+		title="Listelos y Molduras"
+		description="Elementos decorativos de acabado perfecto para realzar tus espacios. Descubre nuestros listelos en diferentes estilos y tamaños."
+		heroImage="https://images.unsplash.com/photo-1572909061407-7fd0a3b8ea17?w=1200&h=600&fit=crop"
+		category="listelos"
+		accessories={categoryAccessories}
+	/>
+
+	<div class="container mx-auto px-4 py-12">
+		<h2 class="text-3xl font-bold text-gray-900 mb-8">Nuestra Colección de Listelos</h2>
+		<Welcome
+			title="Productos Disponibles"
+			description="Explora todas nuestras opciones de listelos y molduras"
+			products={listelosProducts}
+			sectionId="listelos"
+		/>
+	</div>
+</Layout>

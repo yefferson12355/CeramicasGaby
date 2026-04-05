@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Welcome from '../components/Welcome.astro';
+import CategoryShowcase from '../components/CategoryShowcase.astro';
+
+const porcelanatosProducts = [
+	{
+		title: 'Porcelanato 60x60cm Blanco Premium',
+		image: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=600&h=600&fit=crop',
+		description: 'Porcelanato de gran formato 60x60cm con acabado blanco brillante. Ideal para pisos y paredes',
+		category: 'Porcelanato',
+		price: 'Consultar'
+	},
+	{
+		title: 'Porcelanato 90x90cm Gris Oscuro',
+		image: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&h=600&fit=crop',
+		description: 'Porcelanato extra large 90x90cm con efecto cemento. Perfecto para espacios amplios',
+		category: 'Porcelanato',
+		price: 'Consultar'
+	},
+	{
+		title: 'Porcelanato Rectificado Mármol',
+		image: 'https://images.unsplash.com/photo-1578607318831-e934f5e13657?w=600&h=600&fit=crop',
+		description: 'Porcelanato rectificado con acabado mármol. Juntas mínimas para un look uniforme',
+		category: 'Porcelanato',
+		price: 'Consultar'
+	},
+	{
+		title: 'Porcelanato Anti-deslizante Exterior',
+		image: 'https://images.unsplash.com/photo-1556573426-07bb3e7ce12c?w=600&h=600&fit=crop',
+		description: 'Porcelanato con acabado anti-deslizante para terrazas y piscinas. Máxima seguridad',
+		category: 'Porcelanato',
+		price: 'Consultar'
+	}
+];
+
+const categoryAccessories = [
+	{ name: 'BAÑO', href: '/banos', color: 'from-blue-600 to-blue-700' },
+	{ name: 'COCINA', href: '/cocina', color: 'from-orange-600 to-orange-700' },
+	{ name: 'SALA', href: '/sala', color: 'from-purple-600 to-purple-700' },
+	{ name: 'TERRAZA', href: '/terraza', color: 'from-green-600 to-green-700' },
+];
+---
+
+<Layout>
+	<CategoryShowcase
+		title="Porcelanatos Premium"
+		description="Descubre nuestra colección de porcelanatos de gran formato en diferentes acabados y colores. Ideales para cualquier espacio de tu hogar."
+		heroImage="https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=1200&h=600&fit=crop"
+		category="porcelanatos"
+		accessories={categoryAccessories}
+	/>
+
+	<div class="container mx-auto px-4 py-12">
+		<h2 class="text-3xl font-bold text-gray-900 mb-8">Nuestra Selección de Porcelanatos</h2>
+		<Welcome
+			title="Productos Disponibles"
+			description="Explora todas nuestras opciones de porcelanato"
+			products={porcelanatosProducts}
+			sectionId="porcelanato"
+		/>
+	</div>
+</Layout>

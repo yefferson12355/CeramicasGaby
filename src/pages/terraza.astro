@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Welcome from '../components/Welcome.astro';
+import CategoryShowcase from '../components/CategoryShowcase.astro';
 
 const terrazaProducts = [
 	{
@@ -14,10 +15,20 @@ const terrazaProducts = [
 ---
 
 <Layout>
-	<Welcome
-		title="Colección de Terrazas"
-		description="Cerámicas robustas para espacios exteriores"
-		products={terrazaProducts}
-		sectionId="terraza"
+	<CategoryShowcase
+		title="Colección Premium de Terrazas"
+		description="Crea espacios exteriores increíbles con materiales anti-deslizante y resistentes. Descubre todos los componentes necesarios para terrazas profesionales."
+		heroImage="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&h=600&fit=crop"
+		category="terrazas"
 	/>
+
+	<div class="container mx-auto px-4 py-12">
+		<h2 class="text-3xl font-bold text-gray-900 mb-8">Productos Destacados para Terrazas</h2>
+		<Welcome
+			title="Productos Destacados"
+			description="Explora nuestra selección de cerámicas especializadas para terrazas"
+			products={terrazaProducts}
+			sectionId="terraza"
+		/>
+	</div>
 </Layout>
